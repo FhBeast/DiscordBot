@@ -15,10 +15,9 @@ INC = "FhBeast"
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='*', intents=intents)
 
-dirname = os.path.dirname(__file__)
-phrases = readtxt(dirname, "phrases.txt")
-math_error = readtxt(dirname, "mathError.txt")
-ask_error = readtxt(dirname, "askError.txt")
+phrases = readtxt("phrases.txt")
+math_error = readtxt("mathError.txt")
+ask_error = readtxt("askError.txt")
 
 ct = None
 
