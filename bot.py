@@ -12,6 +12,7 @@ VERSION = 1.09
 DATE = 2021
 INC = "FhBeast"
 
+intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='*', intents=intents)
 
 phrases = readtxt("phrases.txt")
