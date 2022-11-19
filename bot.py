@@ -9,15 +9,16 @@ import os
 TOKEN = os.environ['KEY']
 
 VERSION = 1.09
-DATE = 2021
+DATE = 202
 INC = "FhBeast"
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='*', intents=intents)
 
-phrases = readtxt("phrases.txt")
-math_error = readtxt("mathError.txt")
-ask_error = readtxt("askError.txt")
+dirname = os.path.dirname(__file__)
+phrases = readtxt(dirname, "phrases.txt")
+math_error = readtxt(dirname, "mathError.txt")
+ask_error = readtxt(dirname, "askError.txt")
 
 ct = None
 
@@ -34,7 +35,7 @@ async def on_ready():
 async def say(ctx):
     await ctx.channel.purge(limit=1)
     #await ctx.send(random.choice(phrases))
-    print(phrases[0])
+    print(readtxt("phrases.txt"))
 
 
 @bot.command()
