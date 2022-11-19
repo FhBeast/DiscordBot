@@ -33,8 +33,7 @@ async def on_ready():
 @bot.command()
 async def say(ctx):
     await ctx.channel.purge(limit=1)
-    #await ctx.send(random.choice(phrases))
-    print(readtxt("phrases.txt"))
+    await ctx.send(random.choice(phrases))
 
 
 @bot.command()
