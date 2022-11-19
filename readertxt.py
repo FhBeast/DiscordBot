@@ -1,3 +1,5 @@
+import os
+
 def readtxt(txt):
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, 'txt')
