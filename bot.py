@@ -12,7 +12,7 @@ VERSION = 1.09
 DATE = 2021
 INC = "FhBeast"
 
-bot = commands.Bot(command_prefix='*')
+bot = commands.Bot(intents=discord.Intents.all() , command_prefix= "*" , description='Yes')
 
 phrases = readtxt("phrases.txt")
 math_error = readtxt("mathError.txt")
