@@ -4,4 +4,4 @@ def readtxt(txt):
 	for line in file:
 		lst.append(line)
     file.close()
-	return lst
+    return lst
