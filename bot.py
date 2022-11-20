@@ -16,8 +16,7 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='*', intents=intents)
 
 phrases = readtxt("phrases.txt")
-
-ban_words = ['тест', 'текст']
+ban_words = readtxt("banWords.txt")
 
 ct = None
 
