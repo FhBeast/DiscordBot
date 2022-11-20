@@ -23,7 +23,7 @@ ct = None
 
 @bot.event
 async def on_ready():
-    print (f"Start succes: {bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
+    print (f"Start success: {bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
     while True:
         await bot.change_presence(status=discord.Status.online, activity=discord.Game("Portal"))
         await sleep(15)
