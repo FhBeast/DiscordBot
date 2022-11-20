@@ -16,8 +16,6 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='*', intents=intents)
 
 phrases = readtxt("phrases.txt")
-math_error = readtxt("mathError.txt")
-ask_error = readtxt("askError.txt")
 
 ban_words = ['тест', 'текст']
 
