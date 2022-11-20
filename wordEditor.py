@@ -1,5 +1,5 @@
 def simplify_word(word):
-    word.lower()
+    word = word.lower()
     last_letter = ''
     result = ''
     
