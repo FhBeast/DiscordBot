@@ -24,7 +24,7 @@ ct = None
 
 @bot.event
 async def on_ready():
-    log_msg("Error", f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
+    log_msg("Start succes", f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
     while True:
         await bot.change_presence(status=discord.Status.online, activity=discord.Game(""))
         await sleep(15)
@@ -65,7 +65,7 @@ async def on_message(message):
 
 
 async def log_msg(source, text):
-    print(f"{source}: {text}")
+    await print(f"{source}: {text}")
 
 
 bot.run(TOKEN)
