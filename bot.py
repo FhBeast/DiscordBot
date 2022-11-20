@@ -24,7 +24,7 @@ ct = None
 
 @bot.event
 async def on_ready():
-    print(f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
+    log("Error", f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
     while True:
         await bot.change_presence(status=discord.Status.online, activity=discord.Game(""))
         await sleep(15)
@@ -53,7 +53,19 @@ async def on_message(message):
     msg_words = message.content.split()
     for i in range(len(msg_words)):
         msg_words[i] = simplify_word(msg_words[i])
-    await message.channel.send(' '.join(msg_words))
+    for word in msg_words:
+    if word in ban_words:
+        try:
+            await message.delete()
+        except:
+            log("Error", "Ошибка при удалении сообщение")
+        await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
+        return
+
+
+
+async def log(source, text):
+    print(f"{source}: {text}")
 
 
 bot.run(TOKEN)
