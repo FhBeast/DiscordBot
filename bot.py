@@ -47,6 +47,7 @@ async def on_message(message):
                 print(f"Error: Ошибка при удалении сообщения")
             await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
             return
+    await Bot.process_commands(message)
 
 
 @bot.command()
