@@ -54,13 +54,13 @@ async def on_message(message):
     for i in range(len(msg_words)):
         msg_words[i] = simplify_word(msg_words[i])
     for word in msg_words:
-    if word in ban_words:
-        try:
-            await message.delete()
-        except:
-            log("Error", "Ошибка при удалении сообщение")
-        await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
-        return
+        if word in ban_words:
+            try:
+                await message.delete()
+            except:
+                log("Error", "Ошибка при удалении сообщение")
+            await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
+            return
 
 
 
