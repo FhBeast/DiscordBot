@@ -47,23 +47,4 @@ async def clear(ctx, amount: int):
     await ctx.channel.purge(limit=amount + 1)
 
 
-@bot.event
-async def on_message(message):
-    if message.author.bot:
-        return
-    
-    msg_words = message.content.split()
-    
-    for i in range(len(msg_words)):
-        msg_words[i] = simplify_word(msg_words[i])
-    for word in msg_words:
-        if word in ban_words:
-            try:
-                await message.delete()
-            except:
-                print(f"Error: Ошибка при удалении сообщения")
-            await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
-            return
-
-
 bot.run(TOKEN)
