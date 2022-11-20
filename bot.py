@@ -26,7 +26,7 @@ ct = None
 async def on_ready():
     print (f"Start succes: {bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
     while True:
-        await bot.change_presence(status=discord.Status.online, activity=discord.Game(""))
+        await bot.change_presence(status=discord.Status.online, activity=discord.Game("Portal"))
         await sleep(15)
 
 
@@ -43,6 +43,7 @@ async def math(ctx):
 
 @bot.command()
 async def clear(ctx, amount: int):
+    print (f"Delete messages: delete messages")
     await ctx.channel.purge(limit=amount + 1)
 
 
@@ -50,7 +51,9 @@ async def clear(ctx, amount: int):
 async def on_message(message):
     if message.author.bot:
         return
+    
     msg_words = message.content.split()
+    
     for i in range(len(msg_words)):
         msg_words[i] = simplify_word(msg_words[i])
     for word in msg_words:
