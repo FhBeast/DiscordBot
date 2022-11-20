@@ -24,7 +24,7 @@ ct = None
 
 @bot.event
 async def on_ready():
-    log("Error", f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
+    log_msg("Error", f"{bot.user.name} v{VERSION} (c) {DATE} {INC}, inc")
     while True:
         await bot.change_presence(status=discord.Status.online, activity=discord.Game(""))
         await sleep(15)
@@ -58,13 +58,13 @@ async def on_message(message):
             try:
                 await message.delete()
             except:
-                log("Error", "Ошибка при удалении сообщение")
+                log_msg("Error", "Ошибка при удалении сообщение")
             await message.channel.send(f"{message.author.mention} **написал запрещенное слово:** *{word}*")
             return
 
 
 
-async def log(source, text):
+async def log_msg(source, text):
     print(f"{source}: {text}")
 
 
