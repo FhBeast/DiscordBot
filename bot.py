@@ -54,7 +54,7 @@ async def on_message(message):
         return
     msg_words = message.content.split()
     for i in range(len(msg_words)):
-    msg_words[i] = simplify_word(msg_words[i])
+        msg_words[i] = simplify_word(msg_words[i])
     await message.channel.send(' '.join(msg_words))
 
 
